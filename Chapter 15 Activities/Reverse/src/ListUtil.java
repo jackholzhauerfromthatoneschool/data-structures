@@ -24,6 +24,6 @@ public class ListUtil
         }
         //System.out.println(strings);
         System.out.println(employeeNames);
-        System.out.println("Expected: [Tom, Romeo, Harry, Dick]");
+        //System.out.println("Expected: [Tom, Romeo, Harry, Dick]");
     }
 }

@@ -13,6 +13,17 @@ public class WordAnalysis
     public static void main(String[] args)
         throws FileNotFoundException
     {
+        //read dictionary and novel file
+        Set<String> dictionaryWords = readWords("data-structures\\Chapter 15 Class Notes\\src\\words");
+        Set<String> dictionaryWordy = readWords("data-structures\\Chapter 15 Class Notes\\src\\war-and-peace.txt");
+        for(String word : dictionaryWordy){
+            System.out.println(word);
+            Iterator<String> iterator = dictionaryWordy.iterator();
+            while(iterator.hasNext()){
+                if (!(iterator.next().equals("it")))
+                System.out.println("weak");
+            }
+        }
     }
 
     /**
@@ -25,6 +36,18 @@ public class WordAnalysis
     public static Set<String> readWords(String filename)
         throws FileNotFoundException
     {
-        return null;
+        //hash instead of tree
+        Set<String> words=new HashSet<>();
+        //determine the current working directory
+        //System.out.println(System.getProperty("user.dir"));
+        Scanner in = new Scanner(new File(filename),"UTF-8");
+        in.useDelimiter("[^a-zA-Z]+");
+        //use any char not letter as delimeter
+        //forefathers one and all bear witness
+        while(in.hasNext()){
+            //add words to set
+           words.add(in.next().toLowerCase());
+        }
+        return words;
     }
 }
