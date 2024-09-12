@@ -40,9 +40,14 @@ public class Gradebook
                 z.put(name, new_grade);
             } else if (input.equalsIgnoreCase("P"))
             {
+                ArrayList<String>z1=new ArrayList<>();
                 Set<String> keys = z.keySet();
                 for(String key:keys){
-                    System.out.println(key+" "+z.get(key));
+                    z1.add(key);
+                }
+                Collections.sort(z1);
+                for(int i=0;i<z1.size();i++){
+                    System.out.println(z1.get(i)+" "+z.get(z1.get(i)));
                 }
                 System.out.println();
             } else
