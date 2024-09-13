@@ -12,13 +12,14 @@ public class StringLengthMap2
 {
     public static void main(String[] args)
     {
-        String filename = "src/test1.txt";
+        String filename = "data-structures\\Chapter 15 Activities\\StringLengthMap\\src\\test1.txt";
+
 
         try (Scanner in = new Scanner(new File(filename)))
         {
 
             // Create your map here
-            
+            Map<Integer,String> speedWagon=new HashMap<>();
 
             while (in.hasNext())
             {
@@ -27,13 +28,25 @@ public class StringLengthMap2
 
                 // Update the map here
                 // Use the Java 8 merge() method
-                
+                if (speedWagon.get(len)!=null)
+                {
+                    //String bazooper=speedWagon.get(len);
+                    speedWagon.merge(len, word,(bazooper,oword)->bazooper+", "+oword);
+                }
+                else
+                {
+                    speedWagon.put(len, word);
+                }
 
 
             }
 
             // Print the strings, in increasing order of their length
             // Use this format: 1: i, a, i
+            Set<Integer> keys = speedWagon.keySet();
+                for(Integer key:keys){
+                System.out.println(speedWagon.get(key));
+                }
         } catch (FileNotFoundException e)
         {
             System.out.println("Cannot open: " + filename);

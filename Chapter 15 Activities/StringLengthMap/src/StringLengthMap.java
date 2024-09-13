@@ -12,11 +12,11 @@ public class StringLengthMap
 {
     public static void main(String[] args) throws FileNotFoundException
     {
-        String filename = "src/test1.txt";
+        String filename = "data-structures\\Chapter 15 Activities\\StringLengthMap\\src\\test1.txt";
 
         try (Scanner in = new Scanner(new File(filename)))
         {
-
+            Map<Integer,String> speedWagon=new HashMap<>();
             // Create your map here
             
 
@@ -24,14 +24,24 @@ public class StringLengthMap
             {
                 String word = clean(in.next());
                 Integer len = word.length();
-
+                
                 // Update the map here
                 // Modify Worked Example 15.1
-                
+                if (speedWagon.get(len)!=null)
+                {
+                    speedWagon.put(len, speedWagon.get(len)+", "+word);
+                }
+                else
+                {
+                    speedWagon.put(len, word);
+                }
 
 
             }
-
+            Set<Integer> keys = speedWagon.keySet();
+                for(Integer key:keys){
+                System.out.println(speedWagon.get(key));
+                }
             // Print the strings, in increasing order of their length
             // Use this format: 1: i, a, i
         } catch (FileNotFoundException e)
