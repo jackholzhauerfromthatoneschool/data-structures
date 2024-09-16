@@ -12,14 +12,14 @@ public class FirstLetterMap
 {
     public static void main(String[] args)
     {
-        String filename = "src/test1.txt";
+        String filename = "data-structures\\Chapter 15 Activities\\FirstLetterMap\\FirstLetterMap2\\src\\test1.txt";
 
         try (Scanner in = new Scanner(new File(filename)))
         {
 
             // Create your map here
-            ...
-
+            Map<Character,String> speedWagon=new HashMap<>();
+            
             while (in.hasNext())
             {
                 String word = clean(in.next());
@@ -27,14 +27,26 @@ public class FirstLetterMap
 
                 // Update the map here
                 // Modify Worked Example 15.1
-                . . .
+                 // Update the map here
+                // Modify Worked Example 15.1
+                if (speedWagon.get(c)!=null)
+                {
+                    speedWagon.put(c, speedWagon.get(c)+", "+word);
+                }
+                else
+                {
+                    speedWagon.put(c, word);
+                }
 
 
             }
 
             // Print the map here in this form
             // a: [a, able, aardvark]
-            . . .
+            Set<Character> keys = speedWagon.keySet();
+                for(Character key:keys){
+                System.out.println(key + ": ["+speedWagon.get(key)+"]");
+                }
         } catch (FileNotFoundException e)
         {
             System.out.println("Cannot open: " + filename);
