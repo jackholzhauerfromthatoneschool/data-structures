@@ -16,9 +16,9 @@ public class FirstLetterMap
 
         try (Scanner in = new Scanner(new File(filename)))
         {
-
+            Map<Character,String> speedWagon=new HashMap<>();
             // Create your map here
-            ...
+            
 
             while (in.hasNext())
             {
@@ -27,13 +27,23 @@ public class FirstLetterMap
 
                 // Update the map here
                 // Use the Java 8 merge method
-                . . .
+                if (speedWagon.get(c)!=null)
+                {
+                    speedWagon.merge(c, word,(bazooper,oword)->bazooper+", "+oword);
+                }
+                else
+                {
+                    speedWagon.put(c, word);
+                }
 
             }
 
             // Print the map here in this form
             // a: [a, able, aardvark]
-            . . .
+            Set<Character> keys = speedWagon.keySet();
+                for(Character key:keys){
+                System.out.println(key + ": ["+speedWagon.get(key)+"]");
+                }
         } catch (FileNotFoundException e)
         {
             System.out.println("Cannot open: " + filename);
