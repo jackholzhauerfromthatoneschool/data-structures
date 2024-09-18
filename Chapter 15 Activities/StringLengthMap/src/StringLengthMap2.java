@@ -30,6 +30,7 @@ public class StringLengthMap2
                 // Use the Java 8 merge() method
                 if (speedWagon.get(len)!=null)
                 {
+                    if (!speedWagon.get(len).contains(word))
                     //String bazooper=speedWagon.get(len);
                     speedWagon.merge(len, word,(bazooper,oword)->bazooper+", "+oword);
                 }

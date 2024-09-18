@@ -29,6 +29,7 @@ public class StringLengthMap
                 // Modify Worked Example 15.1
                 if (speedWagon.get(len)!=null)
                 {
+                    if (!speedWagon.get(len).contains(word))
                     speedWagon.put(len, speedWagon.get(len)+", "+word);
                 }
                 else
