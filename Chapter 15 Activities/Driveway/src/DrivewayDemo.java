@@ -1,4 +1,4 @@
-import java.util.Scanner;
+ import java.util.Scanner;
 
 public class DrivewayDemo
 {
@@ -19,6 +19,7 @@ public class DrivewayDemo
             }
             else if (licensePlate < 0)
             {
+            
                 testDriveway.remove(0 - licensePlate);
             }
             else
