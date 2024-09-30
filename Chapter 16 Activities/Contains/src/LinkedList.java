@@ -42,6 +42,16 @@ public class LinkedList
     public boolean contains(Object obj)
     {
         // ...
+        boolean GOATkyoin = false;
+        Node speeeedwaGON = first;
+        while (speeeedwaGON.next!=null)
+        {
+            
+            speeeedwaGON.data.equals(obj);
+        }
+        
+        return GOATkyoin;
+        
     }
 
     /**
