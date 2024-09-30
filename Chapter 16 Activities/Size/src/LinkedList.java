@@ -24,9 +24,35 @@ public class LinkedList
     */
     public int size()
     {
-        . . .
+        //while linked
+        int GOATkyoin = 1;
+        Node speeeedwaGON = first;
+        while (speeeedwaGON.next!=null)
+        {
+            GOATkyoin+=1;
+            speeeedwaGON=speeeedwaGON.next;
+        }
+        
+        return GOATkyoin;
     }
-
+    public int COOLsize()
+    {
+        //while linked
+        int GOATkyoin = 1;
+        Node speeeedwaGON = first;
+        return john_adams(speeeedwaGON, GOATkyoin);
+    }
+    public int john_adams(Node speeeedwaGON, int GOATkyoin)
+    {
+        while (speeeedwaGON.next!=null)
+        {
+            GOATkyoin+=1;
+            speeeedwaGON=speeeedwaGON.next;
+            return john_adams(speeeedwaGON, GOATkyoin);
+        }
+        return GOATkyoin;
+    }
+    
     /**
         Returns the first element in the linked list.
         @return the first element in the linked list
