@@ -23,11 +23,18 @@ public class LinkedListQueue
     */
     public void firstToLast()
     {
-        . . .
+         Node replace= new Node();
+         replace.data=head.data;
+         head=head.next;
+         //tail=replace;
+         //head=replace;
+         tail.next=replace;
+         tail=tail.next;
 
 
 
     }
+    
 
     /**
         Checks whether this queue is empty.

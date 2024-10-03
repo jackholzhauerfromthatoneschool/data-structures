@@ -5,14 +5,14 @@ import java.util.NoSuchElementException;
 */
 public class LinkedListStack
 {
-    private Node first;
+    private Node last;
 
     /**
      * Constructs an empty stack.
     */
     public LinkedListStack()
     {
-        first = null;
+        last = null;
     }
 
     /**
@@ -21,8 +21,16 @@ public class LinkedListStack
      * @param element the element to add
     */
 
-
-
+    public void push(Object element)
+    {//always push thing to the front (autin)
+        Node newNode=new Node();
+        newNode.data=element;
+        newNode.next=this.last;
+        this.last=newNode;
+    }
+    public boolean empy_questionmark(){
+        return this.last==null;
+    }
 
 
 
@@ -30,7 +38,16 @@ public class LinkedListStack
         Removes the element from the top of the stack.
         @return the removed element
     */
-
+ public Object remove_something_from_a_stack()
+ {
+    if (empy_questionmark())
+    {
+    Object shmelement = this.last.data;
+    this.last=this.last.next;
+    return shmelement;
+    }
+    else return null;
+ }
 
 
 

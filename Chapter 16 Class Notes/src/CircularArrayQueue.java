@@ -7,14 +7,16 @@ public class CircularArrayQueue
 {
     private Object[] elements;
     //private data
-
+    private int tail;
+    private int head;
+    private int currentSize;
 
 
     /**
         Constructs an empty queue.
     */
 
-
+    public CircularArrayQueue(){final int soze=5;this.elements=new Object[soze];head=0;tail=0;currentSize=0;}
 
 
 
@@ -23,7 +25,9 @@ public class CircularArrayQueue
         Checks whether this queue is empty.
         @return true if this queue is empty
     */
-
+    public boolean empy_questionmark(){
+        return empy_questionmark();
+    }
 
 
 

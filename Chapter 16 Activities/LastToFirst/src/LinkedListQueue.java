@@ -5,6 +5,7 @@
 */
 public class LinkedListQueue
 {
+    private int i=1;
     private Node head;
     private Node tail;
 
@@ -22,11 +23,20 @@ public class LinkedListQueue
     */
     public void lastToFirst()
     {
-        . . .
-
-
-
-
+        if (i<=0){
+            head = null;
+        tail = null;
+        Node replace= new Node();
+         replace.data=head.data;
+         head=head.next;
+         //tail=replace;
+         //head=replace;
+         tail.next=replace;
+         tail=tail.next;
+         head = null;
+        tail = null;
+        lastToFirst();
+        }
 
     }
 
