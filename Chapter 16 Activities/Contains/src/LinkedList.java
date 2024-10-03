@@ -44,16 +44,39 @@ public class LinkedList
         // ...
         boolean GOATkyoin = false;
         Node speeeedwaGON = first;
-        while (speeeedwaGON.next!=null)
+        //if (speeeedwaGON==null)
+        //return false;
+        //else{
+
+        while (speeeedwaGON!=null)
         {
-            
-            speeeedwaGON.data.equals(obj);
+            if(speeeedwaGON.data.equals(obj)){
+                GOATkyoin=true;
+            }
+            speeeedwaGON=speeeedwaGON.next;
         }
         
         return GOATkyoin;
-        
     }
-
+    //}
+    public boolean rs(Object obj)
+    {
+        Node speeeedwaGON = first;
+        return truerecursion(obj,speeeedwaGON);
+    }
+    public boolean truerecursion(Object obj,Node speeeedwaGON)
+    {
+        while (speeeedwaGON!=null)
+        {
+            if(speeeedwaGON.data.equals(obj)){
+                return true;
+            }
+            speeeedwaGON=speeeedwaGON.next;
+            return truerecursion(obj, speeeedwaGON);
+        }
+        
+        return false;
+    }
     /**
         Returns the first element in the linked list.
         @return the first element in the linked list
