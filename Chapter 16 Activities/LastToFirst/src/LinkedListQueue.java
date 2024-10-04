@@ -5,7 +5,6 @@
 */
 public class LinkedListQueue
 {
-    private int i=1;
     private Node head;
     private Node tail;
 
@@ -23,20 +22,32 @@ public class LinkedListQueue
     */
     public void lastToFirst()
     {
-        if (i<=0){
-            head = null;
-        tail = null;
         Node replace= new Node();
-         replace.data=head.data;
-         head=head.next;
-         //tail=replace;
-         //head=replace;
-         tail.next=replace;
-         tail=tail.next;
-         head = null;
-        tail = null;
-        lastToFirst();
+        Node replace1= new Node();
+        replace=tail;
+        replace.data=tail.data;
+        /**/
+        while (head.next!=null) {
+            replace1=head;
+            replace1.data=head.data;
+            replace=replace.next;
+            head=head.next;
+           // System.out.println(replace1.data);
         }
+         
+         //System.out.println(tail.data);
+         //tail=replace;
+         head=replace;
+         head.data=replace.data;
+         //head=head;
+         tail=replace1;
+         tail.data=replace1.data;
+         tail.next=null;
+         System.out.println(replace.data);
+        System.out.println(tail.data);
+        System.out.println(head.data);
+         
+        
 
     }
 
