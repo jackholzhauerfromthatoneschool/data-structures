@@ -88,13 +88,15 @@ public class MorseCode
     private static void treeInsert(char letter, String code)
     {
         TreeNode a = decodeTree;
-        
+        decodeTree=a;
         while (code.length()>0)
         {
             String za_warudo =code.substring(0, 1);
+            ;
             code=code.substring(1);
             if(za_warudo.equals("."))
             {
+                
                 if (decodeTree.getLeft()!=null)
                 {
                     a=a.getLeft();
@@ -119,7 +121,7 @@ public class MorseCode
             }
         }
         a.setValue(letter);
-        decodeTree=a;
+        
     }
 
     /**
@@ -131,11 +133,22 @@ public class MorseCode
     public static String encode(String text)
     {
         StringBuffer morse = new StringBuffer(400);
+        text=text.toUpperCase();
+        while(text.length()>0)
+        {
+        String b =text.substring(0,1);
+        text=text.substring(1);
+        if(codeMap.get(b.charAt(0))!=null)
+        morse.append(codeMap.get(b.charAt(0)));
+        morse.append(" ");
+        }
 
+        //    morse.append(codeMap.get(text));
+        
         /*
             !!! INSERT CODE HERE
         */
-
+        System.out.println(morse);
         return morse.toString();
     }
 
@@ -147,12 +160,30 @@ public class MorseCode
      */
     public static String decode(String morse)
     {
+        TreeNode a = decodeTree;
         StringBuffer text = new StringBuffer(100);
-
+        String za_warudo =morse.substring(0, 1);
+        while (morse.length()>0){
+            morse=morse.substring(1);
+            if(za_warudo.equals("."))
+            {
+                    a=a.getLeft();
+            }
+            else
+            {
+                    a=a.getRight();
+                
+            }
+            
+        
+        
+        
+    }
         /*
             !!! INSERT CODE HERE
         */
-
+        text.append(a.getValue());
+        System.out.println(text);
         return text.toString();
     }
 }
@@ -230,9 +261,10 @@ class BTreePrinter {
     }
 
     private static int maxLevel(TreeNode node) {
+         
         if (node == null)
             return 0;
-
+            System.out.println(node.getValue());
         return Math.max(BTreePrinter.maxLevel(node.getLeft()), 
             BTreePrinter.maxLevel(node.getRight())) + 1;
     }
