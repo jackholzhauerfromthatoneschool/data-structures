@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class BinaryTreeTester
-{
+public class BinaryTreeTester{
     public static void main(String[] args)
     {
         // Tree from page 777 in sorted order
